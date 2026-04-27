@@ -17,9 +17,10 @@ const handleRegisterFunc = (data) => {
 // const email = e.target.email.value;
 // const password = e.target.password.value;
 // console.log(email,password);
+console.log(data);
 }
-console.log( watch('email') );
-console.log( watch('password'));
+// console.log( watch('email') );
+// console.log( watch('password'));
 
 
 
@@ -32,11 +33,32 @@ console.log( watch('password'));
 <form className='space-y-4' onSubmit={handleSubmit(handleRegisterFunc)}>
 
 <fieldset className="fieldset">
+  <legend className="fieldset-legend">Your Name</legend>
+  <input type="text" className="input" placeholder="Enter your name" {...register("name", { required: 'name field is required ' })} />
+  {errors.name && <p className='text-red-500 '>{errors.name.message} </p>}
+
+</fieldset>
+
+
+
+<fieldset className="fieldset">
+  <legend className="fieldset-legend">Photo URL</legend>
+  <input type="text" className="input" placeholder="Type here photo url" {...register("photo", { required: 'photo url field is required ' })} />
+  {errors.photo && <p className='text-red-500 '>{errors.photo.message} </p>}
+
+</fieldset>
+
+
+
+<fieldset className="fieldset">
   <legend className="fieldset-legend">Email address</legend>
   <input type="email" className="input" placeholder="Enter your email address" {...register("email", { required: 'Email field is required ' })} />
   {errors.email && <p className='text-red-500 '>{errors.email.message} </p>}
 
 </fieldset>
+
+
+
 <fieldset className="fieldset">
   <legend className="fieldset-legend">Password</legend>
   <input type="password" className="input" placeholder="Enter your password" {...register("password", { required: 'Password field is required ' })} />
@@ -46,7 +68,6 @@ console.log( watch('password'));
 <button className='btn w-full bg-black text-white'>Register</button>
 
 </form>
-<p className='mt-4 '> Don't have an Account? <Link href={'/register'} className='text-blue-500'>Register</Link></p>
 
       </div>
 
