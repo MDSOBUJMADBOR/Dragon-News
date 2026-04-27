@@ -8,12 +8,15 @@ const db = client.db();
 
 export const auth = betterAuth({
   database: mongodbAdapter(db, {
+
    
     client
   }),
+
+  emailAndPassword: { 
+    enabled: true, 
+  },
 });
 
 
 
-// Dragon-news
-// sRDxbXl4oUVTCRRU
