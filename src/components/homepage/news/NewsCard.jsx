@@ -6,7 +6,7 @@ import { FaEye } from 'react-icons/fa';
 import { IoStar } from 'react-icons/io5';
 
 const NewsCard = ({news}) => {
-          console.log(news,'sobuj')
+          // console.log(news,'sobuj')
 
 
           return (
